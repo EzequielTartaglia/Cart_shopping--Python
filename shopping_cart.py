@@ -1,3 +1,7 @@
+import platform
+import os
+
+
 #Using lists
 products = [] #empty
 new_product = None #0 products
@@ -6,6 +10,14 @@ price = 0
 index_product = None
 running_total = 0
 #Welcome
+
+def clear_terminal():
+
+    if platform.system() == 'Windows':
+        os.system('cls')
+    else:
+        os.system('clear')
+
 
 print('')
 print('Welcome to the Shopping Cart Program! \U0001F6D2')
@@ -26,6 +38,7 @@ print('')
 while option != "5":
     #Add item
     if option == "1":
+        clear_terminal()
         new_product = input("What item would you like to add? ")
         price = float(input(f'What is the price of {new_product}? '))
         print(f'{new_product} has been added to the cart.')
@@ -46,6 +59,7 @@ while option != "5":
 
     #View Cart
     elif option == "2":
+        clear_terminal()
         print('')
         for i in range(len(products)):
             index_product = products[i]
@@ -64,6 +78,7 @@ while option != "5":
 
     #Remove item
     elif option == "3":
+        clear_terminal()
         print('')
         remove_last_item =input("Would you like to remove the last item added? ")
         if remove_last_item.capitalize() == "Yes":
@@ -101,6 +116,7 @@ while option != "5":
             option = input('Please enter an action: ')
             print('')         
         else:
+            clear_terminal()
             print('')
             print("Maybe it was a mistake.")
             print('')
@@ -116,6 +132,7 @@ while option != "5":
 
     #Total compute 
     elif option == "4":
+        clear_terminal()
         print('')
         for price in all_prices: 
             running_total += price
