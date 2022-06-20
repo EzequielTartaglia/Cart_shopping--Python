@@ -99,6 +99,11 @@ while option != "5":
         remove_item = input("Do you want to remove an item?")
         if remove_item.capitalize() == "Yes":
             print('')
+            print('')
+            for i in range(len(products)):
+                index_product = products[i]
+                print(f'[{i+1}]  {index_product} - ${all_prices[i]:.2f}')
+            print('')
             index = int(input("What item do you like to remove of the list? "))
             print('')
             index -= 1
@@ -113,6 +118,7 @@ while option != "5":
             print('4. Compute total \U0001F4B2')
             print('5. Quit')
             print('')
+            index_product = 0
             option = input('Please enter an action: ')
             print('')         
         else:
@@ -156,5 +162,6 @@ while option != "5":
         option = input('Please enter an action: ')
 
 print("Thank you. Goodbye.")
+
 
 
